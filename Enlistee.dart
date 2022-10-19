@@ -4,25 +4,13 @@ class Enlistee {
   String rank;
   String name;
   int? age;
-    
-  String get theRank {
-    return rank;
-  }
   
   setRank(String rank) {
     this.rank = rank;
   }
- 
-  String get theName {
-    return name;
-  }
   
   setName(String name) {
     this.name = name;
-  }
-
-  int? get theAge {
-    return age;
   }
   
   setAge(int age) {
@@ -40,7 +28,7 @@ class Enlistee {
 void main() {
   final soldier = Enlistee(rank: 'general', name: 'moose', age: 37);
   
-  soldier.setRank('comannder in chief');
+  soldier.setRank('commander in chief');
   soldier.setAge(33);
   soldier.setName('superman');
   String info = soldier.info();
