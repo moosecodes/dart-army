@@ -1,5 +1,4 @@
 import 'dart:core';
-import 'dart:collection';
 
 class Enlistee {
   String rank;
@@ -10,7 +9,7 @@ class Enlistee {
     return rank;
   }
   
-  set setRank(String rank) {
+  setRank(String rank) {
     this.rank = rank;
   }
  
@@ -18,7 +17,7 @@ class Enlistee {
     return name;
   }
   
-  set setName(String name) {
+  setName(String name) {
     this.name = name;
   }
 
@@ -26,8 +25,12 @@ class Enlistee {
     return age;
   }
   
-  set setAge(int age) {
-    age = age;
+  setAge(int age) {
+    this.age = age;
+  }
+  
+  String info() {
+    return '$name $age $rank';
   }
   
   Enlistee({this.rank = 'private', this.name = 'newbie', this.age});
@@ -37,10 +40,11 @@ class Enlistee {
 void main() {
   final soldier = Enlistee(rank: 'general', name: 'moose', age: 37);
   
-  print(soldier.theRank);
-  print(soldier.theName);
-  print(soldier.theAge);
-//   print(soldier.setRank('tuttee'));
-  print(soldier.rank);
+  soldier.setRank('comannder in chief');
+  soldier.setAge(33);
+  soldier.setName('superman');
+  String info = soldier.info();
+  
+  print(info);
 }
 
