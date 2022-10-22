@@ -1,11 +1,10 @@
 import 'dart:collection';
-
 import 'Person.dart';
 
 class Enlistee extends Person {
   dynamic address;
-  String rank = 'Enlistee';
-  String name;
+  String? rank = 'Enlistee';
+  String? name;
   int? age;
 
   @override
@@ -22,24 +21,32 @@ class Enlistee extends Person {
 
   @override
   String info() {
-    return '$rank $age $name - ${address["street"]}';
-  }
-
-  void setRank(String rank) {
-    this.rank = rank;
+    String mailingAddress =
+        '${address["street"]} '
+        '${address["street2"]} '
+        '${address["city"]} '
+        '${address["state"]} '
+        '${address["zip"]}';
+    return '$rank $age $name - $mailingAddress';
   }
 
   void setAddress(HashMap<dynamic, dynamic> address) {
     this.address = address;
   }
 
-  Enlistee({this.name = 'newbie', this.age, this.address});
+  Enlistee({this.name = 'noob', this.rank, this.age, this.address});
 }
 
 void main() {
   HashMap address = new HashMap<dynamic, dynamic>();
-  address.putIfAbsent('street', () => '1000 Vin Scully Ave, Los Angeles, CA 90012');
-  final soldier = Enlistee(name: 'moose', age: 37, address: address);
+  address.addAll({
+    'street': '1000 Vin Scully Ave',
+    'street2': 'Unit 007',
+    'city': 'Los Angeles',
+    'state': 'CA',
+    'zip': '90012',
+  });
+  final soldier = Enlistee(age: 37, address: address, name: 'asdf');
 
   String info = soldier.info();
   

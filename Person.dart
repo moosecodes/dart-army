@@ -1,5 +1,5 @@
 abstract class Person {
-  String name = 'noob';
+  String? name;
   late int? age;
   
   String setName(String name);
