@@ -1,7 +1,7 @@
 import 'dart:collection';
-import 'Enlistee.dart';
+import 'Enlisted.dart';
 
-class Soldier extends Enlistee {
+class Soldier extends Enlisted {
   final int? age;
   final String? name;
   final dynamic address;
@@ -13,7 +13,14 @@ class Soldier extends Enlistee {
 
   @override
   String info() {
-    return '$rank\n$name, $age\n$specialty\n$squadron\n$weapons\n$ammunition';
+    return
+        '$rank\n'
+        '$name,\n'
+        '$age\n'
+        '$specialty\n'
+        '$squadron\n'
+        '$weapons\n'
+        '$ammunition';
   }
 
   void setRank(String rank) {
@@ -21,7 +28,14 @@ class Soldier extends Enlistee {
   }
 
   Soldier({
-    this.name, this.age, this.rank, this.address, this.specialty, this.squadron, this.weapons, this.ammunition
+    this.name,
+    this.age,
+    this.rank,
+    this.address,
+    this.specialty,
+    this.squadron,
+    this.weapons,
+    this.ammunition
   });
 }
 

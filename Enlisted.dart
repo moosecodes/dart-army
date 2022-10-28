@@ -1,10 +1,11 @@
 import 'dart:collection';
 import 'Person.dart';
 
-class Enlistee extends Person {
+class Enlisted extends Person {
   dynamic address;
-  String? rank = 'Enlistee';
+  String? rank;
   String? name;
+  String? nationality;
   int? age;
 
   @override
@@ -34,7 +35,7 @@ class Enlistee extends Person {
     this.address = address;
   }
 
-  Enlistee({this.name = 'noob', this.rank, this.age, this.address});
+  Enlisted({this.name = 'Noob', this.rank = 'Enlistee', this.age, this.address, this.nationality = 'not specified'});
 }
 
 void main() {
@@ -46,7 +47,7 @@ void main() {
     'state': 'CA',
     'zip': '90012',
   });
-  final soldier = Enlistee(age: 37, address: address, name: 'asdf');
+  final soldier = Enlisted(age: 37, address: address);
 
   String info = soldier.info();
   
