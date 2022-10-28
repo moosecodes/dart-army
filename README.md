@@ -1,6 +1,14 @@
 # dart-army
 
+### Classes:
+- Person 
 - Enlistee
-    - rank
-    - name
-    - age
+- Soldier
+- Equipment
+  - Type
+  - Damage
+  - Capacity
+  - Magazine
+- Firearm
+- Rifle
+- Explosive
